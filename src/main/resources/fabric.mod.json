@@ -1,24 +1,24 @@
 {
 	"schemaVersion": 1,
-	"id": "carpet-extension",
+	"id": "carpet-extra",
 	"version": "${version}",
-	"name": "Ornithe Carpet Extension",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"name": "Ornithe Carpet Extra",
+	"description": "Carpet Excalibur! ",
 	"authors": [
-		"You!"
+		"Crazy_H"
 	],
 	"contact": {
-		"homepage": "https://example.com/",
-		"sources": "https://github.com/OrnitheMC/ornithe-template-mod"
+		"homepage": "https://github.com/CrazyHPi/Ornithe-Carpet-Extra",
+		"sources": "https://github.com/CrazyHPi/Ornithe-Carpet-Extra"
 	},
 	"license": "LGPL-3.0-or-later",
-	"icon": "assets/carpet-extension/icon.png",
+	"icon": "assets/carpet-extra/icon.png",
 	"environment": "*",
 	"entrypoints": {
-		"preLaunch": ["carpetextension.CarpetExtensionServer::loadExtension"]
+		"preLaunch": ["carpetextra.CarpetExtraServer::noop"]
 	},
 	"mixins": [
-		"carpet-extension.mixins.json"
+		"carpet-extra.mixins.json"
 	],
 	"depends": {
 		"fabricloader": ">=0.13.3",

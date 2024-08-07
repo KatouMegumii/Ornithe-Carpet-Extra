@@ -1,34 +1,37 @@
-package carpetextension;
+package carpetextra;
 
 import carpet.CarpetExtension;
 import carpet.CarpetServer;
-import carpetextension.command.ExtensionCommand;
-import carpetextension.utils.CarpetExtensionTranslations;
+import carpetextra.utils.CarpetExtensionTranslations;
 import net.minecraft.server.command.handler.CommandRegistry;
 
 import java.util.Map;
 
-public class CarpetExtensionServer implements CarpetExtension {
+public class CarpetExtraServer implements CarpetExtension {
     @Override
     public String version() {
-        return "carpet-extension";
+        return "carpet-extra";
+    }
+
+    public static void noop(){
+        // do nothing
     }
 
     public static void loadExtension() {
         // add to carpet's extension list
-        CarpetServer.manageExtension(new CarpetExtensionServer());
+        CarpetServer.manageExtension(new CarpetExtraServer());
+        System.out.println("Extension LOADED");
     }
 
     @Override
     public void onGameStarted() {
         // let carpet handle the settings
-        CarpetServer.settingsManager.parseSettingsClass(CarpetExtensionSettings.class);
+        CarpetServer.settingsManager.parseSettingsClass(CarpetExtraSettings.class);
     }
 
     @Override
     public void registerCommands(CommandRegistry registry) {
         // register commands here
-        registry.register(new ExtensionCommand());
     }
 
     @Override
