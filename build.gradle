@@ -24,6 +24,7 @@ dependencies {
 	mappings ploceus.featherMappings(project.feather_build)
 
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+	include(implementation(annotationProcessor("io.github.llamalad7:mixinextras-fabric:${project.mixin_extra_version}")))
 	// carpet core
 	modImplementation "com.github.CrazyHPi:ornithe-carpet:${carpet_core_version}"
 
