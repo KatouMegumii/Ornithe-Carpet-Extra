@@ -2,6 +2,7 @@ package carpetextra;
 
 import carpet.CarpetExtension;
 import carpet.CarpetServer;
+import carpet.api.settings.SettingsManager;
 import carpetextra.utils.CarpetExtensionTranslations;
 import net.minecraft.server.command.handler.CommandRegistry;
 
@@ -20,7 +21,6 @@ public class CarpetExtraServer implements CarpetExtension {
     public static void loadExtension() {
         // add to carpet's extension list
         CarpetServer.manageExtension(new CarpetExtraServer());
-        System.out.println("Extension LOADED");
     }
 
     @Override

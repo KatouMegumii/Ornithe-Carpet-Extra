@@ -4,10 +4,60 @@ import carpet.api.settings.Rule;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import static carpet.api.settings.RuleCategory.*;
+
 public class CarpetExtraSettings {
     public static final Logger LOGGER = LogManager.getLogger("carpet-extra");
     // extension category
     public static final String EXTRA = "extra";
 
+    // ==== RULES ==== //
+    @Rule(desc = "allow water to be placed in nether", category = {CREATIVE, EXTRA})
+    public static boolean allowNetherWater = false;
 
+    @Rule(desc = "Disable creative mode item drop cooldown", category = {CREATIVE, EXTRA})
+    public static boolean antiSpamDisabled = false;
+
+    @Rule(desc = "Creative player can open chest and shulker box when they are blocked", category = EXTRA)
+    public static boolean creativeOpenContainerNoCheck = false;
+
+    @Rule(desc = "No more bat spawning", category = {CREATIVE, EXTRA})
+    public static boolean disableBatSpawning = false;
+
+    @Rule(desc = "Hopper counter's hopper has no cooldown", category = {CREATIVE, EXTRA})
+    public static boolean hopperCountersUnlimitedSpeed = false; // todo carpet hopper counter
+
+    @Rule(desc = "Hopper with wool block on top outputs item infinitely without having its item decreased", category = {CREATIVE, EXTRA})
+    public static boolean hopperNoItemCost = false;
+
+    @Rule(
+            desc = "liquid no longer destory blocks, e.g redstone",
+            extra = {
+                    "liquid might weird when it hits block that should be destroyed",
+                    "it will just stop there with no more flow action"
+            },
+            category = {CREATIVE, EXTRA}
+    )
+    public static boolean liquidNoBlockBreaking = false;
+
+    // ==== COMMANDS ==== //
+
+    @Rule(
+            desc = "Count xp when sucked by player or armor stand",
+            extra = {
+                    "player: count xp sucked by player",
+                    "armorstand: count xp sucked by armor stand, and xp will get destroyed",
+                    "Use /xpcounter player set <player> to set one player to count",
+                    "Use /xpcounter <player|armoestand> reset to reset counter"
+            }
+            , category = {CREATIVE, EXTRA},
+            options = {"off, armorstand, player"}
+    )
+    public static String xpCounter = "off";
+
+    @Rule(desc = "Enable the /xpcounter command", category = {COMMAND})
+    public static boolean commandXpCounter = true;
+
+    @Rule(desc = "better /time command", category = {COMMAND})
+    public static boolean betterTimeCommand = true;
 }
