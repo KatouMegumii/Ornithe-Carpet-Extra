@@ -4,13 +4,14 @@
   "package": "carpetextra.mixins",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "rules.betterTimeCommand.TimeCommandMixin",
     "rules.allowNetherWater.DimensionMixin",
     "rules.antiSpamDisabled.ServerPlayNetworkHandlerMixin",
+    "rules.betterTimeCommand.TimeCommandMixin",
     "rules.creativeOpenContainerNoCheck.ChestBlockMixin",
     "rules.creativeOpenContainerNoCheck.EnderChestBlockMixin",
     "rules.creativeOpenContainerNoCheck.ShulkerBoxBlockMixin",
     "rules.disableBatSpawning.BatEntityMixin",
+    "rules.hopperCountersUnlimitedSpeed.HopperBlockEntityMixin",
     "rules.hopperNoItemCost.HopperBlockEntityMixin",
     "rules.liquidNoBlockBreaking.FlowingLiquidBlockMixin"
   ],
