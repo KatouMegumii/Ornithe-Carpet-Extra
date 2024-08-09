@@ -2,8 +2,8 @@ package carpetextra;
 
 import carpet.CarpetExtension;
 import carpet.CarpetServer;
-import carpet.api.settings.SettingsManager;
 import carpetextra.utils.CarpetExtensionTranslations;
+import com.llamalad7.mixinextras.MixinExtrasBootstrap;
 import net.minecraft.server.command.handler.CommandRegistry;
 
 import java.util.Map;
@@ -14,8 +14,9 @@ public class CarpetExtraServer implements CarpetExtension {
         return "carpet-extra";
     }
 
-    public static void noop(){
-        // do nothing
+    public static void init(){
+        // load mixin extra
+        MixinExtrasBootstrap.init();
     }
 
     public static void loadExtension() {

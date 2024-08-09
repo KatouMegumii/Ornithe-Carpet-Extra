@@ -15,7 +15,9 @@
 	"icon": "assets/carpet-extra/icon.png",
 	"environment": "*",
 	"entrypoints": {
-		"preLaunch": ["carpetextra.CarpetExtraServer::noop"]
+		"preLaunch": [
+			"carpetextra.CarpetExtraServer::init"
+		]
 	},
 	"mixins": [
 		"carpet-extra.mixins.json"
