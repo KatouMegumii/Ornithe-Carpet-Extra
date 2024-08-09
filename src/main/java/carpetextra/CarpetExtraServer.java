@@ -17,6 +17,8 @@ public class CarpetExtraServer implements CarpetExtension {
     public static void init(){
         // load mixin extra
         MixinExtrasBootstrap.init();
+        // register extension
+        loadExtension();
     }
 
     public static void loadExtension() {

@@ -4,7 +4,6 @@
   "package": "carpetextra.mixins",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "core.CarpetServerMixin",
     "rules.betterTimeCommand.TimeCommandMixin",
     "rules.allowNetherWater.DimensionMixin",
     "rules.antiSpamDisabled.ServerPlayNetworkHandlerMixin",
