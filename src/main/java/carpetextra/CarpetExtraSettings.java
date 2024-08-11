@@ -1,6 +1,7 @@
 package carpetextra;
 
 import carpet.api.settings.Rule;
+import carpet.api.settings.Validators;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -25,7 +26,7 @@ public class CarpetExtraSettings {
     public static boolean disableBatSpawning = false;
 
     @Rule(desc = "Hopper counter's hopper has no cooldown", category = {CREATIVE, EXTRA})
-    public static boolean hopperCountersUnlimitedSpeed = false; // todo carpet hopper counter
+    public static boolean hopperCountersUnlimitedSpeed = false;
 
     @Rule(desc = "Hopper with wool block on top outputs item infinitely without having its item decreased", category = {CREATIVE, EXTRA})
     public static boolean hopperNoItemCost = false;
@@ -40,23 +41,22 @@ public class CarpetExtraSettings {
     )
     public static boolean liquidNoBlockBreaking = false;
 
-    // ==== COMMANDS ==== //
-
     @Rule(
             desc = "Count xp when sucked by player or armor stand",
             extra = {
-                    "player: count xp sucked by player",
+                    "xp sucked by armor stand will be removed after counted",
+                    "player: count xp sucked by player, xp reduced by mending is included",
                     "armorstand: count xp sucked by armor stand, and xp will get destroyed",
-                    "Use /xpcounter player set <player> to set one player to count",
-                    "Use /xpcounter <player|armoestand> reset to reset counter"
-            }
-            , category = {CREATIVE, EXTRA},
-            options = {"off, armorstand, player"}
+                    "Use /xpcounter <player name|armorstand> to query counter",
+                    "Use /xpcounter <player|armorstand> reset to reset counter"
+            },
+            category = {CREATIVE, EXTRA},
+            options = {"off", "armorstand", "player"},
+            validators = Validators.StrictValidator.class
     )
     public static String xpCounter = "off";
 
-    @Rule(desc = "Enable the /xpcounter command", category = {COMMAND})
-    public static boolean commandXpCounter = true;
+    // ==== COMMANDS ==== //
 
     @Rule(desc = "better /time command", category = {COMMAND})
     public static boolean betterTimeCommand = true;
