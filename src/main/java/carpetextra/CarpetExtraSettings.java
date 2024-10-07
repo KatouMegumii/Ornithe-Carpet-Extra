@@ -60,4 +60,5 @@ public class CarpetExtraSettings {
 
     @Rule(desc = "better /time command", category = {COMMAND})
     public static boolean betterTimeCommand = true;
+    test
 }
